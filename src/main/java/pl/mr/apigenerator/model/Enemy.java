@@ -1,5 +1,7 @@
 package pl.mr.apigenerator.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -15,6 +17,7 @@ public class Enemy {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Hero hero;
 
     public Enemy(String name, Hero hero) {

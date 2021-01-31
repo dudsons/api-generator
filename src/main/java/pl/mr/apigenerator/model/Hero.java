@@ -1,10 +1,11 @@
 package pl.mr.apigenerator.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "heroes")
@@ -22,6 +23,7 @@ public class Hero {
             orphanRemoval = true,
             mappedBy = "hero"
     )
+    @JsonManagedReference
     private List<Enemy> enemyList = new ArrayList<>();
 
     public Hero(String name, List<Enemy> enemyList) {

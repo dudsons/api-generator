@@ -10,8 +10,11 @@ public class Enemy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     private String name;
+
     @ManyToOne
+    @JoinColumn(name = "hero_id")
     private Hero hero;
 
     public Enemy(String name, Hero hero) {

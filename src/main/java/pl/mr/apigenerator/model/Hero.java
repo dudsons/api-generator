@@ -14,7 +14,7 @@ public class Hero {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "hero")
     private List<Enemy> enemyList;
 
     public Hero(String name, List<Enemy> enemyList) {

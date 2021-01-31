@@ -9,3 +9,8 @@ INSERT INTO public.heroes (name) VALUES ('Batman'),('Spiderman');
 INSERT INTO public.enemies(name, hero_id) VALUES
                                                  ('Hugo Strange',1),('Poison Ivy',1),
                                                  ('Venom',2),('Dr.Octopus',2);
+
+INSERT INTO public.heroes (id,name) VALUES (1,'Batman'),(2,'Spiderman');
+INSERT INTO public.enemies(id,name, hero_id) VALUES
+(5,'Hugo Strange',1),(6,'Poison Ivy',1),
+(7,'Venom',2),(8,'Dr.Octopus',2);

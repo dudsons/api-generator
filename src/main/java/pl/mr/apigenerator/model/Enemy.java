@@ -8,14 +8,13 @@ import java.util.Objects;
 public class Enemy {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
 
     @Column(unique = true)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "hero_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Hero hero;
 
     public Enemy(String name, Hero hero) {

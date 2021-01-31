@@ -1,6 +1,7 @@
 package pl.mr.apigenerator.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -10,16 +11,20 @@ import java.util.Set;
 public class Hero {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private long id;
 
     @Column(unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "hero")
-    private Set<Enemy> enemyList;
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            mappedBy = "hero"
+    )
+    private List<Enemy> enemyList = new ArrayList<>();
 
-    public Hero(String name, Set<Enemy> enemyList) {
+    public Hero(String name, List<Enemy> enemyList) {
         this.name = name;
         this.enemyList = enemyList;
     }
@@ -43,11 +48,11 @@ public class Hero {
         this.name = name;
     }
 
-    public Set<Enemy> getEnemyList() {
+    public List<Enemy> getEnemyList() {
         return enemyList;
     }
 
-    public void setEnemyList(Set<Enemy> enemyList) {
+    public void setEnemyList(List<Enemy> enemyList) {
         this.enemyList = enemyList;
     }
 

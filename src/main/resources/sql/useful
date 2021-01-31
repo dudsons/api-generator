@@ -1,5 +1,9 @@
+-- User
 INSERT INTO users (name, surname)
 values (('Marek', 'Rydzewski'),('Anna', 'Rydzewska'));
+
+
+-- Heroes
 
 INSERT INTO public.heroes (name) VALUES ('Batman'),('Spiderman');
 INSERT INTO public.enemies(name, hero_id) VALUES

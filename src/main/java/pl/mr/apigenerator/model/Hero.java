@@ -3,6 +3,7 @@ package pl.mr.apigenerator.model;
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "heroes")
@@ -15,9 +16,9 @@ public class Hero {
     private String name;
 
     @OneToMany(mappedBy = "hero")
-    private List<Enemy> enemyList;
+    private Set<Enemy> enemyList;
 
-    public Hero(String name, List<Enemy> enemyList) {
+    public Hero(String name, Set<Enemy> enemyList) {
         this.name = name;
         this.enemyList = enemyList;
     }
@@ -41,11 +42,11 @@ public class Hero {
         this.name = name;
     }
 
-    public List<Enemy> getEnemyList() {
+    public Set<Enemy> getEnemyList() {
         return enemyList;
     }
 
-    public void setEnemyList(List<Enemy> enemyList) {
+    public void setEnemyList(Set<Enemy> enemyList) {
         this.enemyList = enemyList;
     }
 

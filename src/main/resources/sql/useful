@@ -1,2 +1,7 @@
-INSERT INTO public.users (name, surname)
-values (('Marek', 'Rydzewski'),('Anna', 'Rydzewska'))
+INSERT INTO users (name, surname)
+values (('Marek', 'Rydzewski'),('Anna', 'Rydzewska'));
+
+INSERT INTO public.heroes (name) VALUES ('Batman'),('Spiderman');
+INSERT INTO public.enemies(name, hero_id) VALUES
+                                                 ('Hugo Strange',1),('Poison Ivy',1),
+                                                 ('Venom',2),('Dr.Octopus',2);

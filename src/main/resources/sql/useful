@@ -1,0 +1,2 @@
+INSERT INTO public.users (name, surname)
+values (('Marek', 'Rydzewski'),('Anna', 'Rydzewska'))
